@@ -1,4 +1,5 @@
 # PiFeeder
+*Not yet tested*
 This project uses a Raspberry Pi Zero with buttons and LEDs to track my dog's feeding schedules.
 
 ## Planned features:
