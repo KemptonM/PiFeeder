@@ -1,26 +1,25 @@
-import schedule
-import time
-from giopzero import Button
+from gpiozero import LED, Button    # might not work on the Pi
 
-willieButton = Button(0)    # update button number
-willieLED = LED(0)
-yodaButton = Button(0)      # update button number
-yodaLED = LED(0)
+wButton = Button(0) # update button number
+wLED = LED(0)       # update LED number
+yButton = Button(0)
+yLED = LED(0)
 
+wFed = False
+yFed = False
 
-def timeToFeed():
-    # turn on both button lights
-    print("Lights have turned on")
-
-def buttonPushed():
-    willieButton.when_pressed() = willie.on
-    yodaButton.when_pressed() = yoda.on
-    print("Recording...")       # how will I record this?
+if wButton.when_pressed():
+    wLED.off
+    wFed = True
+if yButton.when_pressed():
+    yLED.off
+    yFed = True
+print("Recording...")       # how will I record this?
 
 # Every day at 07:00 and 18:00 timeToFeed() is called
-schedule.every().day.at("07:00").do(timeToFeed)
-schedule.every().day.at("18:00").do(timeToFeed)
-
-while True:
-    schedule.run_pending()  # checks for pending tasks
-    time.sleep(1)           # loops every second
+def timeToFeed():
+    wFed = False
+    wLED.on         # turn on Willie's LED
+    yFed = False
+    yLED.on         # turn on Yoda's LED
+    print("Lights have turned on")
