@@ -4,5 +4,5 @@ This project uses a Raspberry Pi Zero with buttons and LEDs to track my dog's fe
 
 ## Planned features:
 - Sort and upload data to a web API
-- Send notifications on mobile when light has been left on for 1 hour
-- Visualize feeding time data on a website
+- Send notifications on mobile when light has been left on for X amount of time
+- Visualize data on a site
