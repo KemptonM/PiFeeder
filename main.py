@@ -25,8 +25,8 @@ def yPressed():
     print("Yoda has been fed")
 
 # Wait for either button to be pressed
-wBtn.is_pressed = wPressed  #  these occur in seperate threads
-yBtn.is_pressed = yPressed  # so that the next loop may run forever
+wBtn.is_released = wPressed  #  these occur in seperate threads
+yBtn.is_released = yPressed  # so that the next loop may run forever
 
 def checkSchedule():
     while True:
